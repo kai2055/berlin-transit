@@ -6,6 +6,16 @@ STATIONS = {
     "900017101": "U Mehringdamm",
     "900058101": "S Suedkreuz",
     "900110005": "U Senefelderplatz",
+    "900007102": "S+U Gesundbrunnen",
+    "900120004": "S+U Warschauer Str.",
+    "900120005": "S Ostbahnhof",
+    "900068201": "S+U Tempelhof",
+    "900079221": "S+U Hermannstr.",
+    "900009202": "U Osloer Str.",
+    "900096101": "S+U Wittenau",
+    "900050201": "U Krumme Lanke",
+    "900100001": "S+U Friedrichstr",
+    "900120003": "S Ostkreuz",
 }
 
 def fetch(station_id):
