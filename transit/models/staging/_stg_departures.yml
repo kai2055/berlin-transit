@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: stg_departures
+    description: "One row per train departure, flattened from raw VBB API responses"
+    columns:
+      - name: trip_id
+        description: "Unique identifier for the train trip"
+        tests:
+          - not_null
+
+      - name: planned_when
+        description: "Planned departure time"
+        tests:
+          - not_null
+
+      - name: delay_seconds
+        description: "Delay in seconds (negative = early, 0 = on time, positive = late)"
+        
+
+      - name: station_name
+        description: "Station where the departure was captured"
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 'U Kottbusser Tor'
+                - 'U Mehringdamm'
+                - 'S Suedkreuz'
+                - 'U Senefelderplatz'
+                - 'S+U Gesundbrunnen'
+                - 'S+U Warschauer Str.'
+                - 'S Ostbahnhof'
+                - 'S+U Tempelhof'
+                - 'S+U Hermannstr.'
+                - 'U Osloer Str.'
+                - 'S+U Wittenau'
+                - 'U Krumme Lanke'
+                - 'S+U Friedrichstr'
+                - 'S Ostkreuz'
