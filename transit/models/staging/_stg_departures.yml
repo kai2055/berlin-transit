@@ -8,6 +8,7 @@ models:
         description: "Unique identifier for the train trip"
         tests:
           - not_null
+          
 
       - name: planned_when
         description: "Planned departure time"
