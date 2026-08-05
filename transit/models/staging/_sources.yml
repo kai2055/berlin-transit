@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: transit_raw
+    database: berlin-transit-504417
+    schema: transit_raw
+    tables:
+      - name: departures_raw
