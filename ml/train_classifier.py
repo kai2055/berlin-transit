@@ -29,6 +29,7 @@ def main() -> None:
     )
     pos_weight = (Y_train == 0).sum() / (Y_train == 1).sum()
 
+    mlflow.set_tracking_uri("sqlite:///mlflow.db")
     mlflow.set_experiment("berlin-transit-lateness")
     with mlflow.start_run():
         model = XGBClassifier(**PARAMS, random_state=42,
@@ -60,4 +61,3 @@ if __name__ == "__main__":
 
 
 
-    
