@@ -12,3 +12,7 @@ logs/
 
 mlruns/
 mlflow.db 
+
+
+spark/output/
+
