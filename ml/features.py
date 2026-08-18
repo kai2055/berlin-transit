@@ -1,5 +1,6 @@
 """Turn raw departure data into model-ready features."""
 import logging
+
 import pandas as pd
 from pull_data import load_departures
 

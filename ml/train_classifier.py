@@ -1,16 +1,20 @@
 """Train a 'will this train be late' classfier, tracked with MLflow.  """
 
 import logging
+
 import mlflow
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import (roc_auc_score, precision_score,
-                             recall_score, f1_score, classification_report)
-
-from xgboost import XGBClassifier
-
-from pull_data import load_departures
 from features import build_features
+from pull_data import load_departures
+from sklearn.metrics import (
+    classification_report,
+    f1_score,
+    precision_score,
+    recall_score,
+    roc_auc_score,
+)
+from sklearn.model_selection import train_test_split
+from xgboost import XGBClassifier
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s | %(message)s")
 log = logging.getLogger(__name__)

@@ -1,6 +1,7 @@
 """Pull clean departure data from BigQuery into pandas and take a look"""
 
 import logging
+
 import pandas as pd
 from google.cloud import bigquery
 

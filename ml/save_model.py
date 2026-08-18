@@ -2,12 +2,12 @@
 
 import logging
 from pathlib import Path
+
 import joblib
 import pandas as pd
-from xgboost import XGBClassifier
-
-from pull_data import load_departures
 from features import build_features
+from pull_data import load_departures
+from xgboost import XGBClassifier
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s | %(message)s")
 log = logging.getLogger(__name__)

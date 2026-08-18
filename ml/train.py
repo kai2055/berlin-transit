@@ -1,13 +1,13 @@
 """Train s first delay-prediction model"""
 
 import logging
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_absolute_error
-from xgboost import XGBRegressor
 
-from pull_data import load_departures
+import pandas as pd
 from features import build_features
+from pull_data import load_departures
+from sklearn.metrics import mean_absolute_error
+from sklearn.model_selection import train_test_split
+from xgboost import XGBRegressor
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s | %(message)s")
 log = logging.getLogger(__name__)

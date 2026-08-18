@@ -2,8 +2,8 @@
 
 from datetime import datetime, time
 
-import requests
 import pandas as pd
+import requests
 import streamlit as st
 from google.cloud import bigquery
 

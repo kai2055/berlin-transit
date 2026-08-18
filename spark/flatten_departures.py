@@ -1,7 +1,7 @@
 """PySpark batch job: flatten raw VBB JSON from the lake into clean parquet."""
 
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import explode, col
+from pyspark.sql.functions import col, explode
 
 spark = SparkSession.builder.appName("flatten-departures").getOrCreate()
 
