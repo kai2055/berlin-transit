@@ -1,15 +1,15 @@
 
 
+import logging
 import os
 import subprocess
 import sys
 import tempfile
-from pathlib import Path
-from google.cloud import storage, bigquery
-import logging
 import time
-from prometheus_client import CollectorRegistry, Gauge, push_to_gateway
+from pathlib import Path
 
+from google.cloud import bigquery, storage
+from prometheus_client import CollectorRegistry, Gauge, push_to_gateway
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
@@ -34,8 +34,12 @@ PUSHGATEWAY_URL = os.environ.get('PUSHGATEWAY_URL')
 registry = CollectorRegistry()
 m_files = Gauge('sync_files_uploaded', 'New files uploaded this run', registry=registry)
 m_rows = Gauge('sync_rows_loaded', 'Rows in BigQuery after load', registry=registry)
-m_duration = Gauge('sync_duration_seconds', 'Wall-clock duration of the sync', registry=registry)
-m_success = Gauge('sync_success', '1 if the run succeeded, 0 if it failed', registry=registry)
+m_duration = Gauge(
+    'sync_duration_seconds', 'Wall-clock duration of the sync', registry=registry
+)
+m_success = Gauge(
+    'sync_success', '1 if the run succeeded, 0 if it failed', registry=registry
+)
 
 
 BQ_SCHEMA = [

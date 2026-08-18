@@ -1,0 +1,21 @@
+[tool.ruff]
+# Only lint our own code — never the virtual environments or generated folders
+extend-exclude = [
+    ".venv",
+    "ml_venv",
+    "airflow_venv",
+    "mlruns",
+    "spark/output",
+    "terraform",
+]
+
+# Keep the first pass gentle: core correctness checks, not every style nitpick.
+# E/F = pyflakes + pycodestyle errors (real problems), I = import sorting.
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+# collect.py is the deliberate Phase-0 baseline — kept intentionally simple
+# to show the project's starting point. We don't hold it to the full style
+# bar that applies to code from Phase 1 onward.
+[tool.ruff.lint.per-file-ignores]
+"collect.py" = ["E501", "E702"]

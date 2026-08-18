@@ -1,0 +1,30 @@
+name: CI
+
+# Run on every push and every pull request to main
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            # 1. Grab the repo's code onto the runner
+            - name: Check out code
+              uses: actions/checkout@v4
+
+            # 2. Install Python
+            - name: Set up Python
+              uses: actions/setup-python@v5
+              with:
+                python-version: "3.12"
+
+            # Install ruff
+            - name: Install ruff
+              run: pip install ruff
+              
+            # 4. Run the check
+            - name: Run ruff
+              run: ruff check .

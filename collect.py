@@ -1,4 +1,7 @@
-import json, datetime, urllib.request, pathlib
+import datetime
+import json
+import pathlib
+import urllib.request
 
 # A few big interchange stations to start. IDs verified from the VBB API.
 STATIONS = {
