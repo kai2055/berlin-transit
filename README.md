@@ -20,10 +20,18 @@ An end-to-end data & ML engineering pipeline that predicts one thing — *will t
 ![ADRs](https://img.shields.io/badge/ADRs-14-blue)
 ![cost](https://img.shields.io/badge/cost-~%E2%82%AC0%20(free%20tier)-brightgreen)
 
-🔗 **[Live API](https://transit-api-184545841057.us-central1.run.app)** &nbsp;·&nbsp; **[Live dashboard](https://transit-dashboard-184545841057.us-central1.run.app)** &nbsp;·&nbsp; 🎥 Demo *(coming)* <!-- replace with: 🎥 [Watch demo](VIDEO_URL) -->
 
-<!-- Screenshot slot — drop a dashboard screenshot here:
-![dashboard](docs/img/dashboard.png)
+🔗 **[Live API](https://transit-api-184545841057.us-central1.run.app)** &nbsp;·&nbsp; **[Live dashboard](https://transit-dashboard-184545841057.us-central1.run.app)**
+
+![Berlin Transit demo](docs/img/demo.gif)
+
+**Live dashboard — charts, filters, and the delay predictor:**
+
+![dashboard with delay charts and filters](docs/img/dashboard.png)
+
+**The predictor — will this train be more than 3 minutes late?**
+
+![live delay predictor](docs/img/predictor.png)
 -->
 
 ---
